@@ -13,6 +13,7 @@ _XXXXX_ can be used to transfer any cryptographic asset from one ledger to anoth
 
 ## 3. DEXA
 _XXXXX_ is designed to utilize the power of chain-agnostic computing to obtain the best execution through DEX aggregation, across multiple EVM-compatible L1s, L2s, and other ecosystems. A user can start a swap of any token and _XXXXX_ intelligently routes this swap through a network of blockchain bridges, being sensitive to transfer cost and time. Token information is aggregated from DEXs (interacting with, e.g., Uniswap, Sushiswap, or other protocols that are able to perform swaps of tokens), and it sources liquidity data as well as liquidity to find the best route to swap tokens. 
+ 
 
 The basic _XXXXX_ process is as follows:
 
