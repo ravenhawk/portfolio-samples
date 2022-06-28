@@ -1,37 +1,16 @@
-## Welcome to GitHub Pages
+### Overview
 
-You can use the [editor on GitHub](https://github.com/firoyj/Fiona-Roy/edit/main/docs/index.md) to maintain and preview the content for your website in Markdown files.
+The user can initiate a swap of any of the tokens we support and we find the best route for that swap, whether that is a simple swap in an Automated Market Maker (AMM) or via a more complex system moving tokens between different networks to achieve the best result.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+More information on the **3 main features**:
 
-### Markdown
+# 1.	CoW
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+XXXXX introduces a cross-chain version of Coincidence of Wants (CoW), it collects CoWs from any ledger and matches orders while off-chain. This cross-ledger smart matching engine organizes orders to be matched and seeks ways to go through larger networks and tokens to get to the more exotic networks and tokens. XXXXX's algorithm optimizes output for the user since CoW can be cheaper, faster, and sometimes more reliable.
 
-```markdown
-Syntax highlighted code block
+# 2. Cross-Chain
+XXXXX can be used to transfer any cryptographic asset from one ledger to another and thus, by definition, it is cross-chain and cross-layer. We leverage YYYYY for cross-chain transfers and swaps by bundling swaps, settling the exchange of assets via cross-chain CoWs, and the rest of the order through bridges.
 
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/firoyj/Fiona-Roy/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+# 3. DEXA
+XXXXX is designed to utilize the power of chain-agnostic computing to obtain the best execution through DEX aggregation, across multiple EVM-compatible L1s, L2s, and other ecosystems. A user can start a swap of any token and XXXXX intelligently routes this swap through a network of blockchain bridges, being sensitive to transfer cost and time. Token information is aggregated from DEXs (interacting with, e.g., Uniswap, Sushiswap, or other protocols that are able to perform swaps of tokens), and it sources liquidity data as well as liquidity to find the best route to swap tokens. More information on DEXs can be found here.
+The basic XXXXX process is as follows:
