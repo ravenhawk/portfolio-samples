@@ -1,5 +1,3 @@
-# Portfolio Page 1
-
 # Protocol Overview
 
 _XXXXX_ delivers a cross-ledger DEX aggregator that allows for best execution through market aggregation, tapping into AMMs on multiple chains, for dark pool- like order execution. The user can initiate a swap of any of the tokens we support and we find the best route for that swap, whether that is a simple swap in an Automated Market Maker (AMM) or via a more complex system moving tokens between different networks to achieve the best result.
