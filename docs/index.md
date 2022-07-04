@@ -1,12 +1,12 @@
 # Protocol Overview
 
-_XXXXX_ delivers a cross-ledger DEX aggregator that allows for best execution through market aggregation, tapping into AMMs on multiple chains, for dark pool- like order execution. The user can initiate a swap of any of the tokens we support and we find the best route for that swap, whether that is a simple swap in an Automated Market Maker (AMM) or via a more complex system moving tokens between different networks to achieve the best result.
+_XXXXX_ delivers a cross-ledger DEX aggregator that allows for optimum execution through market aggregation, tapping into AMMs on multiple chains to achieve dark pool- like order execution. The user can initiate a swap of any of the tokens we support and we find the best route for that swap, whether that is a simple swap in an Automated Market Maker (AMM) or via a more complex system moving tokens between different networks to achieve the best result.
 
 More information on the **3 main features**:
 
 ### 1.	CoW
 
-_XXXXX_ introduces a cross-chain version of Coincidence of Wants (CoW), it collects CoWs from any ledger and matches orders while off-chain. This cross-ledger smart matching engine organizes orders to be matched and seeks ways to go through larger networks and tokens to get to the more exotic networks and tokens. _XXXXX_'s algorithm optimizes output for the user since CoW can be cheaper, faster, and sometimes more reliable.
+_XXXXX_ introduces a cross-chain version of Coincidence of Wants (CoW), it collects CoWs from any ledger and matches orders while off-chain. This cross-ledger smart matching engine organizes orders to be matched and seeks routes through larger networks and tokens to get to the more exotic networks and tokens. _XXXXX_'s algorithm optimizes output for the user since CoW can be cheaper, faster, and sometimes more reliable.
 
 ### 2. Cross-Chain
 _XXXXX_ can be used to transfer any cryptographic asset from one ledger to another and thus, by definition, it is cross-chain and cross-layer. We leverage YYYYY for cross-chain transfers and swaps by bundling swaps, settling the exchange of assets via cross-chain CoWs, and the rest of the order through bridges.
