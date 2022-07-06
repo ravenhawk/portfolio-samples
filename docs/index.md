@@ -27,4 +27,4 @@ The basic _XXXXX_ process is as follows:
 5. We then compare our solution with the solvers' solutions and reward the best solver.
 6. Lastly, we submit the best solution on the chain.
 
-*Initializing a request for the swap is not based on a blockchain event. Instead, it is initialized directly by the user entering information into a database, either using a front-end desktop tool or mobile application. This was conceived because we need a time period to find the best route and also to check whether a CoW exists. This requires a baseline database from which we can obtain the information and this database will select the best alternative route to be executed if, for example, no CoW is found after a given period of time.
+*Initializing a request for the swap is not based on a blockchain event. Instead, it is initialized directly by the user entering information into a database, either using a front-end desktop tool or mobile application. This was conceived because we need a time period to find the best route and also to check whether a CoW exists.
