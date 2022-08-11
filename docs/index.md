@@ -24,7 +24,7 @@ The basic _XXXXX_ process is as follows:
 
 1. An API gathers all the configurations from the user to be sent for processing; the algorithm operates off-chain* but against multiple networks (chains and layers) with bridging included.
 2. Batches of orders are gathered over a set period of time. Once gathered, the protocol tries to find the optimum swap routes (including DEXs and bridges)
-3. The problem is sent out to **external solvers** (listening to an API) who try to solve it using their custom algorithms. Solvers stake $_XXXX_ before submitting their solution.
+3. The problem is sent out to **external solvers** (listening to an API) who try to solve it using their custom algorithms. Solvers stake $_YYYYY_ before submitting their solution.
 4. The protocol also solves the problem using our in-house algorithm.
 5. We compare our solution with the solvers' solutions and reward the best solver.
 6. Lastly, we submit the best solution on the chain.
