@@ -1,34 +1,32 @@
-## Perpetual contract basics
+Note: For confidentiality purposes, the product name is expressed as _XXXXX_ and the token is expressed as _YYYYY_
 
-Perpetual contracts are a type of futures contract, pioneered in the cryptocurrency space by Bitmex. Perpetual contracts are one of the most popular derivative products in the space.
-Perpetual contracts allow traders to speculate on the future price of a given asset by buying (going long) or selling (going short) perpetual futures contracts. Unlike typical futures, perpetuals do not expire and remain effective until the trader closes their position.
-The price of perpetual contracts will often diverge from the broader market (aka spot market). These deviations signal sentiment on the exchange - if a majority of traders expect the underlying asset to increase in value over time, the price of the perpetual contract will likely exceed the spot price. Likewise, if most traders expect the price to fall, the price of the perpetual will be below the spot price.
-There are two mechanisms that moderate this process, and function to keep the perpetual contract price close to the spot price.
+# Protocol Overview
 
-### Funding payments
-Every hour, traders with open long or short positions will pay each other a funding payment, depending on market conditions. If the contract price is above the spot price, longs will pay shorts. If the contract price is below the spot price, shorts will pay longs. The size of the funding payment is a function of the difference between the contract price and the spot price, as well as user's position size. This incentivizes traders to take the unpopular side of the market.
+_XXXXX_ delivers a cross-ledger DEX aggregator that allows for optimum execution through market aggregation, tapping into Automated Market Makers (AMMs) on multiple chains to achieve dark pool- like order execution. The user can initiate a swap of any supported token and the protocol finds the best route for that swap, whether that be a simple swap in an AMM or via a more complex system moving tokens between different networks to achieve the best result.
 
-### Arbitrage
-If the contract price diverges significantly from the spot price in other exchanges, arbitrageurs can benefit in two ways:
-1. If they hold a position elsewhere, they can use Infinix Protocol to take the inverse position and earn funding payments. 
-2. They buy or sell an asset elsewhere, and long or short that asset using Infinix Protocol, in the expectation that the price will tend to move back toward the spot price
+The protocol boasts the following **3 main features**:
 
-XXXXX will connect to API3 data beacons, which are atomic data feeds powered by a singular first-party oracle. Beacons will be used as inputs into the calculations of the logarithmic options pricing model. In partnering with API3, Infinix can scale its data categories and pairs while having the data feeds covered in the event of any mishaps or manipulation, as is currently prevalent in the data oracle space. API3 has a well-reserved coverage pool for valid claims.
+### 1.	Coincidence of Wants
 
-In using first-party data oracles, API3 provides reliable and reputable data feeds with coverage. Having coverage attached to the use of the data feed increases the robustness and confidence in their use for decentralized applications and smart contracts.
-API3 is a critical Web3 building block for the quality and quantity of datasets. In order to attract users, the addition of diverse data sets is needed, which grows the total value locked and fee revenue from the opening and closing of trading positions on the Infinix protocol.
-By using API3’s solution we can open up support for ever more reputable direct data sources, which means that we will immediately be able to take advantage of this.
+_XXXXX_ introduces a cross-chain version of Coincidence of Wants (CoW). It collects CoWs from any ledger and matches orders off-chain. This cross-ledger smart matching engine organizes orders that can be matched and seeks routes through larger networks and tokens to get to the more exotic networks and tokens. _XXXXX_'s algorithm optimizes output for the user since CoW can be cheaper, faster, and often more reliable.
 
-## vAMM
-Our exchange model is very different from other exchanges, including AMM-based exchanges.
-Key points:
-•	XXXXX Protocol does not use liquidity or liquidity providers.
-•	XXXXX Protocol is 100% AMM based; there is no order book.
-•	The on-chain price reflects trades on XXXXX Protocol - the price only moves when positions are opened or closed.
-Infinix tracks the log2 of the underlying asset's price as our mark, i.e., mark price = log2 (index price)
+### 2. Cross-Chain
+_XXXXX_ can be used to transfer any cryptographic asset from one ledger to another and is thus, by definition, cross-chain and cross-layer. We leverage _YYYYY_ for cross-chain transfers and swaps by bundling swaps, settling the exchange of assets via cross-chain CoWs, and the rest of the order is processed through bridges.
 
-The log vAMM acts as an independent cash-settlement market. Hence to make the log vAMM mark price close to an underlying index, Infinix needs to add a funding rate, similar to funding payments for perpetual contracts on central limit order book exchanges.
+### 3. DEXA
+_XXXXX_ is designed to utilize the power of chain-agnostic computing to obtain best execution through DEX aggregation, across multiple EVM-compatible L1s, L2s, and other ecosystems. A user can start a swap of any token and _XXXXX_ intelligently routes this swap through a network of blockchain bridges, being sensitive to transfer cost and time. Token information is aggregated from DEXs (interacting with, e.g., Uniswap, Sushiswap, or other protocols that are able to perform token swaps), and it sources liquidity data as well as liquidity to find the best route to swap tokens. 
+ 
+   ___
+   
+# Process
 
-Traders use collateral (USDC) to open long or short positions in a given asset. Every time a trade is made, the vAMM calculates the entry or exit price in the same way prices are calculated on Uniswap or other AMM style exchanges. 
+The basic _XXXXX_ process is as follows:
 
-An important difference with the vAMM is that no swap is occurring. Unlike Uniswap, for example, where traders arrive with asset A and leave with asset B, on Infinix Protocol traders always arrive with USDC, and leave with USDC. This allows the protocol to operate without ever having held the underlying asset.
+1. An API gathers all the configurations from the user to be sent for processing; the algorithm operates off-chain* but against multiple networks (chains and layers) with bridging included.
+2. Batches of orders are gathered over a set period of time. Once gathered, the protocol tries to find the optimum swap routes (including DEXs and bridges)
+3. The problem is sent out to **external solvers** (listening to an API) who try to solve it using their custom algorithms. Solvers stake $_XXXX_ before submitting their solution.
+4. The protocol also solves the problem using our in-house algorithm.
+5. We compare our solution with the solvers' solutions and reward the best solver.
+6. Lastly, we submit the best solution on the chain.
+
+* Initializing a request for the swap is not based on a blockchain event. Instead, it is initialized directly by the user entering information into a database, either using a front-end desktop tool or mobile application. This was conceived because we need a certain period of time to find the best route and also to check whether a CoW exists.
