@@ -14,7 +14,7 @@ _XXXXX_ introduces a cross-chain version of Coincidence of Wants (CoW). It colle
 _XXXXX_ can be used to transfer any cryptographic asset from one ledger to another and is thus, by definition, cross-chain and cross-layer. We leverage _YYYYY_ for cross-chain transfers and swaps by bundling swaps, settling the exchange of assets via cross-chain CoWs, and the rest of the order is processed through bridges.
 
 ### 3. DEXA
-_XXXXX_ is designed to utilize the power of chain-agnostic computing to obtain best execution through DEX aggregation, across multiple EVM-compatible L1s, L2s, and other ecosystems. A user can start a swap of any token and _XXXXX_ intelligently routes this swap through a network of blockchain bridges, being sensitive to transfer cost and time. Token information is aggregated from DEXs (interacting with, e.g., Uniswap, Sushiswap, or other protocols that are able to perform token swaps), and it sources liquidity data as well as liquidity to find the best route to swap tokens. 
+_XXXXX_ is designed to utilize the power of chain-agnostic computing to obtain best execution through decentralized exchange aggregation (DEXA), across multiple EVM-compatible L1s, L2s, and other ecosystems. A user can start a swap of any token and _XXXXX_ intelligently routes this swap through a network of blockchain bridges, being sensitive to transfer cost and time. Token information is aggregated from DEXs (interacting with, e.g., Uniswap, Sushiswap, or other protocols that are able to perform token swaps), and it sources liquidity data as well as liquidity to find the best route to swap tokens. 
  
    ___
    
