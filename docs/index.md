@@ -1,12 +1,12 @@
-Note: For confidentiality purposes, in these excerpts the product name is expressed as _XXXXX_ and the token is expressed as _YYYYY_
+Note: For confidentiality purposes, the product name is expressed as _XXXXX_ and the token is expressed as _YYYYY_
 
 # Protocol Overview
 
-_XXXXX_ delivers a cross-ledger DEX aggregator that allows for optimum execution through market aggregation, tapping into AMMs on multiple chains to achieve dark pool- like order execution. The user can initiate a swap of any of the tokens we support and we find the best route for that swap, whether it's a simple swap in an Automated Market Maker (AMM) or via a more complex system moving tokens between different networks to achieve the best result.
+_XXXXX_ delivers a cross-ledger DEX aggregator that allows for optimum execution through market aggregation, tapping into Automated Market Makers (AMMs) on multiple chains to achieve dark pool- like order execution. The user can initiate a swap of any supported token and the protocol finds the best route for that swap, whether that be a simple swap in an AMM or via a more complex system moving tokens between different networks to achieve the best result.
 
-More information on the **3 main features**:
+The protocol boasts the following **3 main features**:
 
-### 1.	CoW
+### 1.	Coincidence of Wants
 
 _XXXXX_ introduces a cross-chain version of Coincidence of Wants (CoW), it collects CoWs from any ledger and matches orders off-chain. This cross-ledger smart matching engine organizes orders that can be matched and seeks routes through larger networks and tokens to get to the more exotic networks and tokens. _XXXXX_'s algorithm optimizes output for the user since CoW can be cheaper, faster, and often more reliable.
 
