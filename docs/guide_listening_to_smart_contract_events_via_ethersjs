@@ -1,116 +1,135 @@
 
-# Listening to smart contract events using Ethers.js 
+# Rootstock: Listening to smart contract events from a frontend DApp via Ethers.js
 
-This guide will walk you through the necessary steps to listen to smart contract events via ethers.js. These steps cover the installation and configuration of essential tools and technologies.
+## Overview
+
+This guide will walk you through the necessary steps to listen to smart contract events via ethers.js directly from a frontend DApp. These steps cover the installation and configuration of essential tools and technologies.
+
+Smart contracts emit events that serve as signals, notifying developers and applications of meaningful occurrences dictated by the contract's logic. For instance, in ERC-20 token contracts, a "transfer" event is triggered when tokens are traded, thus providing transaction details. Listening to events in real-time is crucial for Web3 projects. Ethers.js offers a streamlined workflow for setting up blockchain event listeners, enabling instant alerts for on-chain activities.
 
 ## Prerequisites
 
-Before proceeding, ensure you have the following prerequisites:
+Before starting, ensure you have the following prerequisites:
 
-- Familiarity with command-line usage.
-- Basic understanding of smart contracts.
-- Knowledge of [Full Stack dApp Guide on Rootstock](https://dev.rootstock.io/guides/full-stack-dapp-on-rsk/part1-overview/).
+- Familiarity with command-line usage
+- Git
+- Basic understanding of smart contracts
+- Knowledge of [Full Stack dApp Guide on Rootstock](https://dev.rootstock.io/guides/full-stack-dapp-on-rsk/part1-overview/)
 
-## Step 1: Installing Node.js
+## Setting up your environment for Hardhat
 
-Node.js is a vital component for development, especially with tools like Hardhat. Install Node.js version 12 or later:
+### Step 1: Installing Node.js
 
-### Linux
+Node.js is a powerful JavaScript runtime environment, which forms the foundation for Hardhat. Ensure you have Node.js >= 12.0 installed on your system.
 
-```shell
-sudo apt update
-sudo apt install curl git
-curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
-sudo apt install nodejs
-```
+Here's how to install Node.js on Linux, MacOS and Windows:
 
-### Mac OSX
+- Linux
 
-```shell
-curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.35.2/install.sh | bash
-nvm install 12
-nvm use 12
-nvm alias default 12
-npm install npm --global # Upgrade npm to the latest version
-```
+  ```shell
+  sudo apt update
+  sudo apt install curl git
+  sudo apt install nodejs
+  curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
+  ```
 
-### Windows
+- Mac OSX
 
-Install [Git for Windows](https://git-scm.com/download/win) and [Node.js installer for Windows](https://nodejs.org/dist/latest-v12.x/).
+  ```shell
+  curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.35.2/install.sh | bash
+  nvm install 12
+  nvm use 12
+  nvm alias default 12
+  npm install npm --global # Upgrade npm to the latest version
+  ```
 
-> **Note:** For Windows, consider using [Windows Subsystem for Linux (WSL)](https://learn.microsoft.com/en-us/windows/dev-environment/javascript/nodejs-on-wsl) for a better development experience.
+- Windows
 
-## Step 2: Setting up RSK Local Node
+Install [Git for Windows](https://git-scm.com/download/win) and [Node installer for Windows](https://nodejs.org/dist/latest-v12.x/)
 
-To interact with RSK, you need a local node. Follow the installation instructions provided in the [RSK Devportal](https://dev.rootstock.io/quick-start/step1-install-rsk-local-node/).
+> **Note:** For Windows, we strongly recommend you use [Windows Subsystem for Linux (WSL)](https://learn.microsoft.com/en-us/windows/dev-environment/javascript/nodejs-on-wsl) for a better development experience.
 
-> If you encounter issues, refer to [Set up RSK with Java](https://dev.rootstock.io/rsk/node/install/operating-systems/java/).
+## Step 2: Setting up the RSK Local Node
+
+To interact with [RSK](https://dev.rootstock.io/), you need a local node. Follow the installation instructions outlined in the [RSK Devportal](https://dev.rootstock.io/quick-start/step1-install-rsk-local-node/). There are various ways to install an RSK node, on other supported platforms: Check out [installing RSKj](https://dev.rootstock.io/rsk/node/install/).
 
 ## Step 3: Setting up Hardhat
 
-Next, set up Hardhat, a development environment for Ethereum-like networks. Navigate to the project folder and install the required packages:
+Next, set up Hardhat by navigating to the `block-hardhat` folder and running the following commands:
 
-```shell
-cd your-project-folder
+```bash
+cd block-hardhat
 npm install
 ```
 
 ## Step 4: Installing ethers.js
 
-Install ethers.js, a powerful library for Ethereum interactions:
-
-```shell
+```bash
 npm install --save ethers
 ```
 
-> For more details and troubleshooting, refer to the [Ethers documentation](https://docs.ethers.io/v5/getting-started/).
+## Step 5: Importing ethers.js
 
-## Step 5: Providing a Mnemonic Phrase for RSK Testnet Deployment
+For node.js require:
 
-To deploy on the RSK testnet, generate a secure 12-word mnemonic phrase and store it:
+```bash
+const { ethers } = require("ethers");
+```
 
-```shell
+For ES6 or TypeScript:
+
+```bash
+import { ethers } from "ethers";
+```
+
+If you run into an issue during the install process, check the [Ethers documentation](https://docs.ethers.org/v5/getting-started/)
+
+## ABI
+
+[Precompiled ABIs](https://dev.rootstock.io/develop/libs/rsk-precompilied-abis/)
+
+## Providing a mnemonic phrase for RSK testnet deployment
+
+To facilitate RSK testnet deployment, generate a secure [Mnemonic phrase](https://en.bitcoinwiki.org/wiki/Mnemonic_phrase) consisting of 12 English words:
+
+```bash
 mnemonics > .testnet.seed-phrase
 ```
 
-> **Note:** Ensure RSKj (Regtest) is running as described in the prerequisites section.
+> Remember: Ensure RSKj (Regtest) is running in a separate terminal. To setup Regtest see the [prerequisites section](https://github.com/bguiz/workshop-rsk-prereqs/blob/master/walkthru.md#posix-compliant-shell) for Complete Full Stack dApp Guide on RSK - Part 2:Smart Contracts.
 
-Create a `.secret` file in the project folder and store your mnemonic phrase securely.
+Then, create a `.secret` file in the `block-hardhat` folder and store your mnemonic phrase.
 
-> If you need assistance generating a mnemonic phrase, use this [resource](https://iancoleman.io/bip39/).
+> If you have any issue see this [resource for generating a mnemonic phrase](https://iancoleman.io/bip39/)
 
-## Step 6: Compiling and Deploying a Smart Contract
+## Compiling and deploying a smart contract(s)
 
-Navigate to the project folder and run the appropriate script to compile and deploy a smart contract:
+Navigate to the `block-hardhat` folder and run one of the following scripts based on your chosen testing network:
 
-```shell
+```bash
 npm run deploy:hardhat
 npm run deploy:regtest
 npm run deploy:testnet
 npm run deploy:ganache
 ```
 
-These scripts compile a test token (Meow Token) and deploy it to the selected network.
+These scripts compile a test token (_Meow Token_). Deploy this token to the selected network, and copy the deployed contract data to the frontend smart contracts folder `front/contracts`.
 
-## Step 7: Running the DApp
+## Running the DApp
 
-To test your application, follow these steps to view it in your browser:
+Now, let's test our application. Follow these steps to view the application in your browser:
 
-1. Navigate to the frontend folder:
+1.Navigate to the frontend folder:
 
-```shell
+```bash
 cd ..
 cd frontend
 ```
 
-2. Run `index.html` in your browser using a [Live Server extension](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) in VSCode.
-
-> **Note:** Ensure RSKj (Regtest) is running in a separate terminal.
+2.Then, run `index.html` in your browser with a [`Live Server`](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) VSCode extension by clicking the `Go Live` button in the bottom-right corner of the VSCode window. VSCode will open the web page from `index.html` in a new browser window.
 
 ## Final Considerations
 
-With these steps, you've set up your development environment for RSK workshops. Utilize tools like ethers.js to listen to smart contract events from your frontend DApp and enhance your development experience.
+We hope it was easy to follow these steps to use `ethers.js` to seamlessly listen to smart contract events from your frontend DApp! This powerful tool allows your application to respond to on-chain events in real time providing a highly interactive and engaging user experience.
 
----
-
-Feel free to tailor this documentation to your specific needs and add more details where necessary.
+Our goal is to join forces and give options to people who believe in smart contracts based on Ethereum, and also believe in the power of Bitcoin, through RSK.
