@@ -1,7 +1,7 @@
 
-# RSK Workshop Preparation Guide
+# Listening to smart contract events using Ethers.js 
 
-This guide will walk you through the necessary steps to prepare your development environment for an RSK workshop. These steps cover the installation and configuration of essential tools and technologies.
+This guide will walk you through the necessary steps to listen to smart contract events via ethers.js. These steps cover the installation and configuration of essential tools and technologies.
 
 ## Prerequisites
 
