@@ -1,7 +1,7 @@
 ---
-title: Portfolio Samples
-desciption: A selection of technical writing examples
-url: https://firoyj.github.io/portfolio-samples/
+title: portfolio-samples
+description: A selection of technical writing examples
+url: https://firoyj.github.io/portfolio-samples/docs/
 remote_theme: pages-themes/modernist@v0.2.0
 
 plugins:
