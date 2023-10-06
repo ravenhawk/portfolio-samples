@@ -12,23 +12,23 @@ After receiving a response from the algorithm, the Order Book also sorts request
 
 
 ## User request interface
-        
-        '{
-          owner: "0x123", // string - user
-          source: {
-          chainId: 1, // number - source chain
-          tokenAddress: "0x123", // string - source token
-          amount: 1000, // number - amount to swap
-          },
-          destination: {
-          chainId: 3, // number - destination chain
-          tokenAddress: "0x123", // string - destination token
-          minAmount: 950, // number - minimal acceptable amount
-          },
-          route: "fastest", // enum "fastest" | "cheapest" | "best"
-          cow: "both", // enum "both" | "only-cow" | "no-cow"
-          }'
-
+```
+`{
+  owner: "0x123", // string - user
+  source: {
+    chainId: 1, // number - source chain
+    tokenAddress: "0x123", // string - source token
+    amount: 1000, // number - amount to swap
+  },
+  destination: {
+    chainId: 3, // number - destination chain
+    tokenAddress: "0x123", // string - destination token
+    minAmount: 950, // number - minimal acceptable amount
+  },
+  route: "fastest", // enum "fastest" | "cheapest" | "best"
+  cow: "both", // enum "both" | "only-cow" | "no-cow"
+}`
+```
 
 ## Receive user request
 
