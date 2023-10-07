@@ -35,7 +35,7 @@ Adjust configurations as needed, including entities and addresses, without trave
 
 ### Implementing Subgraphs
 
-You can deploy subgraphs automatically without the need for an online repository. An example of the live playground can be found here.
+You can deploy subgraphs automatically without the need for an online repository. An example of the live playground can be found [here](https://thegraph.com/hosted-service/subgraph/hehe100596/template-subgraph).
 
 ### 4. Autogeneration
 
