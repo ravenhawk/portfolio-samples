@@ -2,7 +2,7 @@
 title: portfolio-samples
 description: a selection of technical writing examples
 url: https://firoyj.github.io/portfolio-samples/docs/
-remote_theme: pages-themes/modernist@v0.2.0
+remote_theme: pages-themes/midnight@v0.2.0
 markdown: kramdown
 kramdown:
   math_engine: mathjax
