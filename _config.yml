@@ -5,6 +5,8 @@ url: https://firoyj.github.io/portfolio-samples/docs/
 remote_theme: pages-themes/modernist@v0.2.0
 markdown: kramdown
 kramdown:
+  math_engine: mathjax
+  syntax_highlighter: rouge
   input: GFM
   auto_ids: true
   footnote_nr: 1
@@ -19,12 +21,9 @@ kramdown:
 
 lsi: false
 safe: true
-source: [your repo's top level directory]
+source: portfolio-directory
 incremental: false
 highlighter: rouge
 gist:
   noscript: false
-kramdown:
-  math_engine: mathjax
-  syntax_highlighter: rouge
 ---
